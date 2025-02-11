@@ -49,9 +49,7 @@ const gameOptions = {
     "flagShip Builders": "Nok, Kuroyammy",
     "Ship Builders": "Thuliux, Megalodon, Basit, ShadowFighter191, A198\n"
   },
-  
-  ships: Object.values(combinedShips).flatMap(a => a.code),
-  
+    
   teams: {
     0: { // "Juggernaut"
       color: "RGBA(13, 191, 25, 0.35)",
@@ -202,7 +200,7 @@ setTimeout(() => {game.custom.started||prepareGame()}, 400);
 this.options = {
   root_mode: "",
   map_name: `${gameOptions.info.name} - Beta v${gameOptions.info.version}`,
-  ships: [gameOptions.ships, gameOptions.juggernauts, gameOptions.flagShips, gameOptions.defaultShip].flat(Infinity),
+  ships: Object.values(combinedShips).flatMap(a => a.code),
   vocabulary: vocabulary,
   custom_map: map,
   friendly_colors: Object.keys(gameOptions.teams).length,
